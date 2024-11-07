@@ -16,7 +16,8 @@
 #define BUZZER PB4
 
 // Tempos
-#define DEBOUNCE_TIME 10
+#define DEBOUNCE_TIME 20
+#define DIG_TIME 5
 #define PRESS_TIME 750
 #define ROLL_TIME 175
 #define PULSE_OFF_TIME 300
@@ -126,7 +127,7 @@ void loop()
 
 void showDisplay()
 {
-    if ((millis() - lastupdate) >= DEBOUNCE_TIME)
+    if ((millis() - lastupdate) > DIG_TIME)
     {
         lastupdate = millis();
 
